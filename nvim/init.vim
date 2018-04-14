@@ -11,6 +11,18 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-sensible'                       " Sensible defaults for vim
 Plug 'kien/ctrlp.vim'                           " Fuzzy file search
+Plug 'airblade/vim-gitgutter' " Git gutter for all of us
+Plug 'tpope/vim-fugitive' " Because git in vim
+Plug 'majutsushi/tagbar' " Tag bar
+Plug 'scrooloose/nerdcommenter'                  " Nerd commenter
+
+" Auto-complete functionality
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }       " Auto-complete for NeoVim
+Plug 'zchee/deoplete-jedi', { 'for': 'python' }                     " Python auto-complete module for Deoplete
+Plug 'ervandew/supertab'                                            " Auto-completition with <TAB>
+
+" Linting
+Plug 'neomake/neomake'                          " Asynchronous linter
 call plug#end()
 
 " Force vim to use english
