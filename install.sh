@@ -2,26 +2,40 @@
 
 cd $HOME
 
-echo "Downloading Oh-My-Zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+DOTS=$HOME/dotfiles
 ZSH=$HOME/.oh-my-zsh
 NVIM=$HOME/.config/nvim
 
-echo "Installing ZSH theme: Pure"
-mkdir $ZSH/functions
-git clone https://github.com/sindresorhus/pure.git $ZSH/custom/pure
-ln -s $ZSH/custom/pure/pure.zsh $ZSH/themes/the-pure.zsh-theme
-ln -s $ZSH/custom/pure/async.zsh $ZSH/functions/async.zsh
+echo "Checking out the dotfiles repository"
+git clone --recursive https://github.com/sandor-nemeth/dotfiles.git $DOTS
+
+echo "Install oh-my-zsh with the Pure theme"
+if [ ! -d "$ZSH" ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+else
+    echo "oh-my-zsh is already installed. Skipping"
+fi
+
+mkdir -p $ZSH/functions
+
+if [ ! -d "$ZSH/custom/pure" ]; then
+    git clone https://github.com/sindresorhus/pure.git $ZSH/custom/pure
+    ln -s $ZSH/custom/pure/pure.zsh $ZSH/themes/the-pure.zsh-theme
+    ln -s $ZSH/custom/pure/async.zsh $ZSH/functions/async.zsh
+else
+    echo "pure theme is already installed. Skipping"
+fi
+
+echo "Installation successful, sourcing $HOME/.zshrc"
+rm -rf $HOME/.zshrc || ln -s $DOTS/zsh/zshrc $HOME/.zshrc
+source ~/.zshrc
 
 echo "Set up nvim"
 mkdir -p $NVIM
-
-echo "Checking out the dotfiles repository"
-DOTS=$HOME/dotfiles
-git clone --recursive https://github.com/sandor-nemeth/dotfiles.git $DOTS
-
-echo "Creating symlinks"
-rm -rf $HOME/.zshrc || ln -s $DOTS/zsh/zshrc $HOME/.zshrc
 rm -rf $NVIM/init.nvim || ln -s $DOTS/nvim/init.vim $NVIM/init.vim
-ln -s tmuxconfig/.tmux.conf
+nvim +PlugInstall +qall
+
+echo "Downloading tmux plugin manager"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+rm -rf $HOME/.tmux.conf || ln -s $DOTS/tmuxconfig/tmux.conf $HOME/.tmux.conf
+
