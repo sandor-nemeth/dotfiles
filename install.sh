@@ -39,3 +39,5 @@ echo "Downloading tmux plugin manager"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 rm -rf $HOME/.tmux.conf || ln -s $DOTS/tmuxconfig/tmux.conf $HOME/.tmux.conf
 
+echo "Installing additional packages"
+pip install --user jedi
