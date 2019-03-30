@@ -28,6 +28,9 @@ Plug 'neomake/neomake'                                                      " As
 
 " IDEs
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }                         " Golang support
+
+" Gruvbox theme
+Plug 'morhetz/gruvbox'    
 call plug#end()
 
 " Force vim to use english
@@ -74,8 +77,9 @@ autocmd FileType go nmap <leader>c  <Plug>(go-coverage-toggle)
 
 let g:go_fmt_command = "goimports"
 
-" themes
+" visual configuration
 set background=dark
+colorscheme gruvbox
 hi vertsplit ctermfg=238 ctermbg=235
 hi LineNr ctermfg=237
 hi StatusLine ctermfg=235 ctermbg=245
@@ -90,8 +94,8 @@ hi GitGutterDelete ctermbg=235 ctermfg=245
 hi GitGutterChangeDelete ctermbg=235 ctermfg=245
 hi EndOfBuffer ctermfg=237 ctermbg=235
 
-set statusline=%=%t\ %y\ -\ %l:%c
+set statusline=%=&P\ %f\ %m
 set fillchars=vert:\ ,stl:\ ,stlnc:\ 
 set laststatus=2
-"set noshowmode
+set noshowmode
 
