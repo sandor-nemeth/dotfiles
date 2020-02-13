@@ -1,6 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME=gitster
+ZSH_THEME=avit
 
 plugins=(git brew common-aliases mvn node npm osx tmux)
 
