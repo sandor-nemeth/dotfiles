@@ -9,22 +9,14 @@ NVIM=$HOME/.config/nvim
 echo "Checking out the dotfiles repository"
 git clone --recursive https://github.com/sandor-nemeth/dotfiles.git $DOTS
 
-echo "Install oh-my-zsh with the Pure theme"
-if [ ! -d "$ZSH" ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-else
-    echo "oh-my-zsh is already installed. Skipping"
-fi
+# install zsh theme aphrodite
+# source: https://github.com/win0err/aphrodite-terminal-theme
+echo "Installing and configuring ZSH theme"
+mkdir -p ~/.oh-my-zsh/custom/themes/
+wget -xqO ~/.oh-my-zsh/custom/themes/aphrodite.zsh-theme https://git.io/v5ohc
+sed -i.bak 's/^[[:space:]]*ZSH_THEME=.*/ZSH_THEME="aphrodite"/' ~/.zshrc
+source ~/.zshrc 
 
-mkdir -p $ZSH/functions
-
-if [ ! -d "$ZSH/custom/pure" ]; then
-    git clone https://github.com/sindresorhus/pure.git $ZSH/custom/pure
-    ln -s $ZSH/custom/pure/pure.zsh $ZSH/themes/the-pure.zsh-theme
-    ln -s $ZSH/custom/pure/async.zsh $ZSH/functions/async.zsh
-else
-    echo "pure theme is already installed. Skipping"
-fi
 
 echo "Installation successful, sourcing $HOME/.zshrc"
 rm -rf $HOME/.zshrc || ln -s $DOTS/zsh/zshrc $HOME/.zshrc

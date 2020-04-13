@@ -26,6 +26,9 @@ Plug 'SirVer/ultisnips'                                                     " Sn
 " Linting
 Plug 'neomake/neomake'                                                      " Asynchronous linter
 
+" Styling
+Plug 'adrianolaru/vim-adio' 
+
 call plug#end()
 
 " Force vim to use english
