@@ -1,106 +1,24 @@
+env:
+  TERM: xterm-256color
+
 window:
   padding:
-    x: 2
-    y: 2
-  dynamic_padding: true
-  decorations: none
-  startup_mode: Windowed
-scrolling:
-  history: 1000
-tabspaces: 8
+    x: 12
+    y: 12
+  scrolling:
+    history: 10000
+
 font:
-  size: 14.0
-  normal: 
-    family: Source Code Pro
+  size: 13
   offset:
-    x: 0
-    y: 2
-  glyph_offset:
-    x: 0
-    y: 0
+    y: 14
+  normal: 
+    family: Fira Code
+    style: Regular
+  bold: 
+    family: Fira Code
+  italic: 
+    family: Fira Code
+  use_thin_strokes: true
 
-debug:
-  render_timer: false
-  persistent_logging: false
-
-draw_bold_text_with_bright_colors: true
-
-live_config_reload: true
-
-cursor:
-  # Cursor style
-  #
-  # Values for 'style':
-  #   - ▇ Block
-  #   - _ Underline
-  #   - | Beam
-  style: Underline
-
-  # If this is `true`, the cursor will be rendered as a hollow box when the
-  # window is not focused.
-  unfocused_hollow: true
-
-selection:
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
-
-  # When set to `true`, selected text will be copied to both the primary and
-  # the selection clipboard. Otherwise, it will only be copied to the selection
-  # clipboard.
-  save_to_clipboard: false
-
-dynamic_title: true
-
-# Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
-  animation: EaseOutExpo
-  duration: 0
-
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
 background_opacity: 1.0
-
-
-# Colors (Tomorrow Night Bright)
-colors:
-  # Default colors
-  primary:
-    background: '0x2b303b'
-    foreground: '0xc0c5ce'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x2b303b'
-    cursor: '0xc0c5ce'
-
-  # Normal colors
-  normal:
-    black:   '0x2b303b'
-    red:     '0xbf616a'
-    green:   '0xa3be8c'
-    yellow:  '0xebcb8b'
-    blue:    '0x8fa1b3'
-    magenta: '0xb48ead'
-    cyan:    '0x96b5b4'
-    white:   '0xc0c5ce'
-
-  # Bright colors
-  bright:
-    black:   '0x65737e'
-    red:     '0xbf616a'
-    green:   '0xa3be8c'
-    yellow:  '0xebcb8b'
-    blue:    '0x8fa1b3'
-    magenta: '0xb48ead'
-    cyan:    '0x96b5b4'
-    white:   '0xeff1f5'
-
-  indexed_colors:
-    - { index: 16, color: '0xd08770' }
-    - { index: 17, color: '0xab7967' }
-    - { index: 18, color: '0x343d46' }
-    - { index: 19, color: '0x4f5b66' }
-    - { index: 20, color: '0xa7adba' }
-    - { index: 21, color: '0xdfe1e8' }
-
