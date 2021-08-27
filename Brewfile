@@ -1,27 +1,15 @@
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
 
-brew 'zsh'
 brew 'tmux'
-brew 'git'
 brew 'nvim'
-brew 'npm'
+brew 'svn'
 
-cask 'java'
-brew 'maven'
-brew 'gradle'
 
-cask 'google-chrome'
-cask 'spotify'
-cask 'slack'
-cask 'docker'
-cask 'vlc'
-cask 'alfred'
-
+# these are nice font options to have for terminals and editors.
 cask 'font-fira-code'
 cask 'font-source-code-pro'
+cask 'font-source-code-pro-for-powerline'
 cask 'font-hack'
-
-cask 'visual-studio-code'
-cask 'jetbrains-toolbox'
-
+cask 'font-inconsolata'
+cask 'font-inconsolata-for-powerline'
