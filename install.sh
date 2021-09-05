@@ -20,7 +20,7 @@ echo "## Configuring Alacritty"
 rm -rf $HOME/.config/alacritty/alacritty.yml
 mkdir -p $HOME/.config/alacritty/
 ln -s $DOTS/alacritty/alacritty.yml $HOME/.config/alacritty/
-echo "## Alacritty configuration successful"
+echo "## Alacritty configuration completed"
 echo "##"
 
 echo "## Configuring ZSH"
@@ -46,12 +46,24 @@ echo "## Please reload your ZSH configuration using:"
 echo "##     source ~/.zshrc"
 echo "##"
 
+echo "## Configuring tmux"
+rm -rf $HOME/.tmux.conf 
+ln -s $DOTS/tmuxconfig/tmux.conf $HOME/.tmux.conf
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+    git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm  
+fi
+echo "## tmux configuration completed"
+
+
+
+# echo "Downloading tmux plugin manager"
+# 
+# 
+
+
 # echo "Set up nvim"
 # mkdir -p $NVIM
 # rm -rf $NVIM/init.nvim || ln -s $DOTS/nvim/init.vim $NVIM/init.vim
 # nvim +PlugInstall +qall
 
-# echo "Downloading tmux plugin manager"
-# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-# rm -rf $HOME/.tmux.conf || ln -s $DOTS/tmuxconfig/tmux.conf $HOME/.tmux.conf
 
