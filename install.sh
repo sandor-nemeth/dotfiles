@@ -54,16 +54,9 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 fi
 echo "## tmux configuration completed"
 
-
-
-# echo "Downloading tmux plugin manager"
-# 
-# 
-
-
-# echo "Set up nvim"
-# mkdir -p $NVIM
-# rm -rf $NVIM/init.nvim || ln -s $DOTS/nvim/init.vim $NVIM/init.vim
-# nvim +PlugInstall +qall
-
-
+echo "## Configuring nvim"
+mkdir -p $NVIM
+rm -rf $NVIM/init.nvim
+ln -s $DOTS/nvim/init.vim $NVIM/init.vim
+nvim +PlugInstall +qall
+echo "## nvim configuration completed"

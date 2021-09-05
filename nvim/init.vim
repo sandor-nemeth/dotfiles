@@ -28,6 +28,7 @@ Plug 'neomake/neomake'                                                      " As
 
 " Styling
 Plug 'adrianolaru/vim-adio' 
+Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
 
@@ -66,3 +67,8 @@ let g:ctrlp_working_path_mode=0                 " let me change the working dire
 
 set background=dark
 
+set termguicolors     " enable true colors support
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
