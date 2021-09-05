@@ -79,9 +79,6 @@ plugins=(
     vscode
 )
 
-# Open tmux on startup, requires tmux plugin
-ZSH_TMUX_AUTOSTART=true
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

@@ -13,7 +13,7 @@ window:
 
 cursor:
   # Block Underline or Beam
-  style: Block
+  style: Beam
 
 font:
   size: 14
@@ -26,39 +26,7 @@ font:
     y: 4
 
 background_opacity: 1.0
-
-# Colors (Hyper)
-colors:
-  # Default colors
-  primary:
-    background: '#000000'
-    foreground: '#ffffff'
-  cursor:
-    text: '#F81CE5'
-    cursor: '#ffffff'
-
-  # Normal colors
-  normal:
-    black:   '#000000'
-    red:     '#fe0100'
-    green:   '#00a600'
-    yellow:  '#feff00'
-    blue:    '#0066ff'
-    magenta: '#cc00ff'
-    cyan:    '#00ffff'
-    white:   '#d0d0d0'
-
-  # Bright colors
-  bright:
-    black:   '#808080'
-    red:     '#fe0100'
-    green:   '#00d900'
-    yellow:  '#feff00'
-    blue:    '#0066ff'
-    magenta: '#cc00ff'
-    cyan:    '#00ffff'
-    white:   '#FFFFFF'
-
+  
 selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
@@ -77,3 +45,89 @@ shell:
 working_directory: None
 
 tabspaces: 4
+
+schemes:
+  ayu-light: &ayu-light
+    primary:
+      background: '0xfafafa'
+      foreground: '0x5b6672'
+
+    # Normal colors
+    normal:
+      black: '0x000000' #0
+      red: '0xf2590b' #1
+      green: '0x76cc00' #2
+      yellow: '0xf29717' #3
+      blue: '0x41a5d9' #4
+      magenta: '0x9965cc' #5
+      cyan: '0x4dbf98' #6
+      white: '0xc7c7c7' #7
+
+    # Bright colors
+    bright:
+      black: '0x676767'
+      red: '0xd6646a' #9
+      green: '0xa3d900' #10
+      yellow: '0xe7c446' #11
+      blue: '0x6871ff' #12
+      magenta: '0xa37acc' #13
+      cyan: '0x56d9ad' #14
+      white: '0xfeffff' #15
+  ayu-dark: &ayu-dark
+    # Default colors
+    primary:
+      background: '0x0f1419'
+      foreground: '0xe6e1cf'
+
+    # Normal colors
+    normal:
+      black:   '0x000000'
+      red:     '0xf34a4a'
+      green:   '0xbae67e'
+      yellow:  '0xffee99'
+      blue:    '0x73d0ff'
+      magenta: '0xd4bfff'
+      cyan:    '0x83CEC6'
+      white:   '0xf2f2f2'
+
+    # Bright colors
+    bright:
+      black:   '0x737d87'
+      red:     '0xff3333'
+      green:   '0xc2d94c'
+      yellow:  '0xe7c547'
+      blue:    '0x59c2ff'
+      magenta: '0xb77ee0'
+      cyan:    '0x5ccfe6'
+      white:   '0xffffff'
+  ayu-mirage: &ayu-mirage
+    # Default colors
+    primary:
+      background: '#1f2430'
+      foreground: '#cbccc6'
+      bright_foreground: '#f28779'
+
+    # Normal colors
+    normal:
+      black:   '#212733' #
+      red:     '#f08778' #
+      green:   '#53bf97' #
+      yellow:  '#fdcc60' #
+      blue:    '#60b8d6' # 
+      magenta: '#ec7171' #
+      cyan:    '#98e6ca' #
+      white:   '#fafafa' #
+
+    # Brightened
+    bright:
+      black: '#686868'
+      red: '#f58c7d'
+      green: '#58c49c'
+      yellow: '#ffd165'
+      blue: '#65bddb'
+      magenta: '#f17676'
+      cyan: '#9debcf'
+      white: '#ffffff'
+
+# Colors (Hyper)
+colors: *ayu-dark
