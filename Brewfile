@@ -13,3 +13,6 @@ cask 'font-source-code-pro-for-powerline'
 cask 'font-hack'
 cask 'font-inconsolata'
 cask 'font-inconsolata-for-powerline'
+
+# terminal emulator
+cask 'alacritty'

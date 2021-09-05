@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "6d2b4043a61cabd3f6604adede9f4c70cd036b3a"
+        "revision": "5525ac57d9012390f4b645607dd2e9b9f4de7bd4"
       },
       "homebrew/cask-fonts": {
-        "revision": "18b8fc06c45b9dc57bb9daa542b0dc79ee54de7a"
+        "revision": "aad463484986830fd1cd355b37bdc1f1a6749ed0"
       }
     },
     "brew": {
@@ -110,6 +110,20 @@
             }
           }
         }
+      },
+      "spaceship": {
+        "version": "3.14.1",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "all": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/spaceship/blobs/sha256:c1fccc96bfe26a01e2795bd52852e0a4d6cff717c6db2d418a122177c2635444",
+              "sha256": "c1fccc96bfe26a01e2795bd52852e0a4d6cff717c6db2d418a122177c2635444"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -148,15 +162,21 @@
         "options": {
           "full_name": "font-inconsolata-for-powerline"
         }
+      },
+      "alacritty": {
+        "version": "0.9.0",
+        "options": {
+          "full_name": "alacritty"
+        }
       }
     }
   },
   "system": {
     "macos": {
       "big_sur": {
-        "HOMEBREW_VERSION": "3.2.9",
+        "HOMEBREW_VERSION": "3.2.10",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "773df1c17641e575c7efb119b8d260295675790f",
+        "Homebrew/homebrew-core": "ef555524c466f8b806ab8f312003609a437815a7",
         "CLT": "12.5.0.22.9",
         "Xcode": "12.5",
         "macOS": "11.5.2"
